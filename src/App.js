@@ -1,15 +1,33 @@
+import { useState } from 'react';
 import './App.css';
+import Content from './components/Content';
+import Sidebar from './components/Sidebar';
+import SidebarClose from './components/SidebarClose';
 
 function App() {
+  const [sidebar, setSidebar] = useState(false)
+  console.log(sidebar)
+
+  const toggleSidebar = () => {
+    setSidebar(prevIsVisible => !prevIsVisible)
+  }
+
   return (
     <div className="App">
       <div className='flex justify-between gap-0 fixed top-0 w-full'>
-        <div className='w-[15%] h-full min-h-[100vh] bg-white'>
 
+        {/* Start Sidebar */}
+        <div className={'transition2' && sidebar === true ? 'w-[15%] h-full min-h-[100vh] bg-white p-4 transition2' : 'w-auto h-full min-h-[100vh] bg-white p-4 transition2'}>
+          {sidebar === false ? <SidebarClose />
+            : <Sidebar />
+          }
         </div>
-        <header className='w-[85%] bg-white max-h-[70px] border-b-gray-200 border-b shadow p-4 flex justify-between items-center'>
+        {/* End Sidebar */}
+
+        {/* Start header */}
+        <header className={sidebar === false ? 'w-full bg-white max-h-[70px] border-b-gray-200 border-b shadow p-4 flex justify-between items-center' : 'w-[85%] bg-white max-h-[70px] border-b-gray-200 border-b shadow p-4 flex justify-between items-center'}>
           <div className='flex items-center gap-4 w-1/2'>
-            <button>
+            <button onClick={toggleSidebar}>
               <img src='images/menu.svg' className='w-[25px] h-[25px]' />
             </button>
             <button>
@@ -28,8 +46,17 @@ function App() {
 
           </div>
         </header>
+        {/* End header */}
       </div>
-      <div className='w-[85%] mt-[75px] h-[90vh] p-4 fixed left-0 overflow-x-auto'>
+
+      {/* Start Content */}
+      <div className={sidebar === false ? '2xl:w-[95%] w-[90%] mt-[75px] h-[90vh] py-6 px-16 fixed left-0 overflow-x-auto' : 'w-[85%] mt-[75px] h-[90vh] py-6 px-16 fixed left-0 overflow-x-auto'}>
+        <Content />
+      </div>
+      {/* End Content */}
+
+      <div className='absolute'>
+
       </div>
     </div>
   );
