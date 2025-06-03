@@ -3,12 +3,6 @@ import React from 'react'
 function Sidebar() {
   return (
     <div>
-      <a href="https://aliakbarnazemi.ir" target='_blank' rel='noreferrer' className='text-lg font-medium'>
-        Aliakbar Nazemi
-      </a>
-
-      <br />
-      <br />
       <p className='font-[600] text-[#737373] text-[12px] mr-4'>
         داشبورد
       </p>
