@@ -60,7 +60,7 @@ function App() {
       </div>
 
       {/* Start Content */}
-      <div className={sidebar === false ? '2xl:w-[95%] w-[90%] mt-[75px] h-[90vh] py-6 px-16 fixed left-0 overflow-x-auto z-0' : 'w-full lg:w-[75%] xl:w-[85%] mt-[75px] h-[90vh] py-6 px-16 fixed left-0 z-0 overflow-x-auto'}>
+      <div className={sidebar === false ? '2xl:w-[95%] w-[90%] mt-[75px] h-[90vh] lg:py-6 py-4 px-4 md:px-16 fixed left-0 overflow-x-auto z-0' : 'w-full lg:w-[75%] xl:w-[85%] mt-[75px] h-[90vh] py-4 lg:py-6 px-4 lg:px-16 fixed left-0 z-0 overflow-x-auto'}>
         <Content />
       </div>
       {/* End Content */}
