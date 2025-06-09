@@ -26,7 +26,7 @@ function Content() {
 
   setTimeout(() => {
     setLoading(false)
-  }, 2000);
+  }, 3000);
 
   const [chartData, setChartData] = useState({
     labels: [],
@@ -44,7 +44,7 @@ function Content() {
           labels: labels,
           datasets: [
             {
-              label: 'فروش ماه خرداد',
+              label: 'تعداد فروش ماه خرداد',
               data: sales,
               fill: false,
               borderColor: '#2a85ff',
@@ -59,7 +59,7 @@ function Content() {
   return (
     <div>
       <div className='flex flex-col 2xl:flex-row justify-between w-full h-full gap-5'>
-        <div className='w-full 2xl:w-[77%] h-full'>
+        <div className='w-full 2xl:w-[70%] h-full'>
           <div className='w-[100%] bg-white rounded-2xl border border-gray-200 p-4'>
             {loading === true ? <div className="w-full h-[600px] rounded-lg bg-gray-300 animate-pulse transition"></div>
               : <div className='w-full h-full transition2 bg-transparent font-medium div1'>
@@ -76,7 +76,7 @@ function Content() {
               : <div className='w-full h-full transition2 bg-transparent'></div>}
           </div>
         </div>
-        <div className='w-full 2xl:w-[23%] h-full'>
+        <div className='w-full 2xl:w-[30%] h-full'>
           <div className='w-[100%] h-[200px] bg-white rounded-2xl border border-gray-200 p-4'>
             {loading === true ? <div className="w-full h-full rounded-lg bg-gray-300 animate-pulse transition"></div>
               : <div className='w-full h-full transition2 bg-transparent'>
